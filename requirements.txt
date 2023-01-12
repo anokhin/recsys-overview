@@ -1,0 +1,8 @@
+pandas
+networkx
+matplotlib
+seaborn
+scipy
+jupyterlab
+pyarrow
+transliterate
