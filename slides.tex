@@ -23,29 +23,9 @@
 \title{Рекомендательные системы} 
 \subtitle{и кто над ними работает}
 
-\logo{\includegraphics[width=.05\textwidth]{images/vk_logo.png}}
-
-%\setbeamercovered{transparent} 
-%\setbeamertemplate{navigation symbols}{} 
-%\logo{} 
-%\institute{} 
-%\date{}
-%\subject{}
+\logo{\includegraphics[width=.05\textwidth]{images/vk_logo.png}\hspace{0.5em}}
 
 \begin{document}
-
-%{
-%\setbeamertemplate{headline}{}
-%
-%\begin{frame}
-%\titlepage
-%\end{frame}
-%
-%%\begin{frame}
-%%\tableofcontents
-%%\end{frame}
-%
-%}
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/title.png}}
@@ -66,15 +46,15 @@
 \begin{columns}
 
 \begin{column}{0.58\textwidth}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Как устроена рекомендательная система (на примере рекомендаций музыки)
 \item Что нужно знать и уметь, чтобы ее создать (это сложно, но вам точно по силам)
 \end{itemize}
 \end{column}
 
-\begin{column}{0.35\textwidth}
+\begin{column}{0.38\textwidth}
 \begin{center}
-\includegraphics[scale=0.8]{images/plan.jpeg}
+\includegraphics[scale=0.2]{images/plan.jpeg}
 \end{center}
 \end{column}
 
@@ -86,28 +66,32 @@
 
 \begin{columns}
 
+\begin{column}{0.4\textwidth}
+\includegraphics[scale=0.25]{images/logos.png}
+\end{column}
+
+\pause
+
 \begin{column}{0.5\textwidth}
 
-{\bf Компаниям}
 \begin{itemize}[<+->]
+
+\item {\bf Бизнесу}
+\begin{itemize}
 \item Увеличить продажи
 \item Добиться большей лояльности
 \item Улучшить пользовательский опыт
 \end{itemize}
 
-\vfill
-
-{\bf Пользователям}
-\begin{itemize}[<+->]
+\item {\bf Пользователям}
+\begin{itemize}
 \item Найти лучший товар
 \item Найти {\bf все} подходящие товары
 \item Залипнуть
 \end{itemize}
 
-\end{column}
+\end{itemize}
 
-\begin{column}{0.4\textwidth}
-\includegraphics[scale=0.25]{images/logos.png}
 \end{column}
 
 \end{columns}
@@ -119,7 +103,7 @@
 \begin{columns}
 \begin{column}{0.55\textwidth}
    {\bf Задача} \\
-   Рекомендовать пользователю исполнителей, так чтобы пользователь слушал их песни и как можно дольше оставался в приложении
+   Рекомендовать пользователю {\bf исполнителей}, так чтобы пользователь слушал их песни и {\bf как можно дольше} оставался в приложении
 \end{column}
 \begin{column}{0.3\textwidth}
     \includegraphics[scale=0.25]{images/music-screen.png}
@@ -148,10 +132,50 @@
 
 \end{frame}
 
-\begin{frame}{Зоопарк алгоритмов рекомендаций}
+\begin{frame}{Зоопарк алгоритмов рекомендаций \cite{ali_2021}}
 
 \begin{center}
-\includegraphics[scale=0.1]{images/recommenders-taxonomy.png}
+\includegraphics[scale=0.27]{images/taxonomy-1.png}
+\end{center}
+
+\includegraphics[scale=0.16]{images/poll.png} \hfill \url{http://shorturl.at/lmsPZ}
+
+\end{frame}
+
+\begin{frame}{Зоопарк алгоритмов рекомендаций \cite{ali_2021}}
+
+\begin{center}
+\includegraphics[scale=0.27]{images/taxonomy-2.png}
+\end{center}
+
+\includegraphics[scale=0.16]{images/poll.png} \hfill \url{http://shorturl.at/lmsPZ}
+
+\end{frame}
+
+\begin{frame}{Зоопарк алгоритмов рекомендаций \cite{ali_2021}}
+
+\begin{center}
+\includegraphics[scale=0.27]{images/taxonomy-3.png}
+\end{center}
+
+\includegraphics[scale=0.16]{images/poll.png} \hfill \url{http://shorturl.at/lmsPZ}
+
+\end{frame}
+
+\begin{frame}{Зоопарк алгоритмов рекомендаций \cite{ali_2021}}
+
+\begin{center}
+\includegraphics[scale=0.27]{images/taxonomy-4.png}
+\end{center}
+
+\includegraphics[scale=0.16]{images/poll.png} \hfill \url{http://shorturl.at/lmsPZ}
+
+\end{frame}
+
+\begin{frame}{}
+
+\begin{center}
+\includegraphics[scale=0.4]{images/compile.png}
 \end{center}
 
 \end{frame}
@@ -184,7 +208,7 @@ P = \begin{pmatrix}
 	1/2 & 0 & 1/2 & 0 & 0 \\
 	1/3 & 1/3 & 0 & 1/3 & 0 \\
 	0 & 0 & 1/2 & 0 & 1/2 \\
-	0 & 0 & 0 & 1 0
+	0 & 0 & 0 & 1 & 0
 \end{pmatrix}
 \]
 $(1-c)$ -- вероятность рестарта
@@ -201,6 +225,10 @@ $(1-c)$ -- вероятность рестарта
 
 \begin{frame}{Строим граф исполнителей: создаем ребра I}
 
+Коля: Лепс, Газманов, Adele
+
+\pause
+
 \begin{center}
 \begin{tcolorbox}[colback=info!5,colframe=info!70,title=Задача]
 Есть $K$ пользователей. Пользователь $j$ случайным образом с равной вероятностью без возвращения выбирает $n_j$ из $N$ исполнителей. Сколько в среднем пользователей выберут каждую пару исполнителей? 
@@ -211,7 +239,7 @@ $(1-c)$ -- вероятность рестарта
 
 {\bf Ответ}
 \[
-\frac{\sum n_j (n_j - 1)}{N (N-1)}
+E_1 + \ldots + E_K = \frac{\sum_{j=1}^K n_j (n_j - 1)}{N (N-1)}
 \]
 	
 \end{frame}
@@ -296,6 +324,8 @@ $(1-c)$ -- вероятность рестарта
 
 {\bf Память}
 
+\pause
+
 $O(N_{nodes}^2)$
 
 \vfill
@@ -319,7 +349,7 @@ $O(N_{nodes}^3)$
 \begin{itemize}[<+->]
 \item Оптимизированное прямое решение
 \item Оптимизированный power iteration
-\item Алгоритм Bookmark coloring 
+\item Алгоритм Bookmark Coloring 
 \item Динамическое программирование
 \item Сэмплирование монте-карло
 \end{itemize}
@@ -327,7 +357,7 @@ $O(N_{nodes}^3)$
 
 \begin{column}{0.4\textwidth}
 \begin{center}
-\includegraphics[scale=0.5]{images/optimize.jpeg}
+\includegraphics[scale=0.2]{images/natash.jpeg}
 \end{center}
 \end{column}
 
@@ -356,8 +386,8 @@ $O(N_{nodes}^3)$
 \end{center}
 
 \begin{itemize}[<+->]
-\item Потоковая обработка данных (Spark Streaming, Apache Samza)
 \item Хранение данных для анализа
+\item Потоковая обработка данных (Spark Streaming, Apache Samza)
 \end{itemize}
 
 \end{frame}
@@ -367,6 +397,8 @@ $O(N_{nodes}^3)$
 \begin{center}
 \includegraphics[scale=0.5]{images/data-size.png}
 \end{center}
+
+\pause
 
 \begin{itemize}[<+->]
 \item Распределенная файловая система: Hadoop HDFS
@@ -434,7 +466,7 @@ $O(N_{nodes}^3)$
 
 \begin{column}{0.4\textwidth}
 \begin{center}
-\includegraphics[scale=0.5]{images/scientists.jpeg}
+\includegraphics[scale=0.2]{images/science.jpeg}
 \end{center}
 \end{column}
 
