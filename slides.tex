@@ -20,7 +20,7 @@
 \definecolor{warn}{RGB}{128, 0, 0}
 
 \author{Николай Анохин}
-\title{Рекомендательные системы} 
+\title{Рекомендательные системы}
 \subtitle{и кто над ними работает}
 
 \logo{\includegraphics[width=.05\textwidth]{images/vk_logo.png}\hspace{0.5em}}
@@ -341,17 +341,15 @@ $O(N_{nodes}^3)$
 \end{frame}
 }
 
-\begin{frame}{Оптимизируем вычисление рекомендаций}
+\begin{frame}{Оптимизируем вычисление рекомендаций \cite{PPR}}
 
 \begin{columns}
 
 \begin{column}{0.5\textwidth}
 \begin{itemize}[<+->]
+\item Сэмплирование монте-карло
 \item Оптимизированное прямое решение
 \item Оптимизированный power iteration
-\item Алгоритм Bookmark Coloring 
-\item Динамическое программирование
-\item Сэмплирование монте-карло
 \end{itemize}
 \end{column}
 
@@ -446,13 +444,13 @@ $O(N_{nodes}^3)$
 \item Счастье пользователей
 	\begin{itemize}
 	\item Долгосрочный эффект
-	\item Удовлетворение всех сторон
+	\item Многосторонние маректплейсы
 	\item Честность рекомендаций
 	\end{itemize}
 \item Выйти из пузыря
 	\begin{itemize}
 	\item Разнообразие рекомендаций
-	\item Causal recommendations
+	\item Causal рекомендации
 	\item Reinforcement learning
 	\end{itemize}
 \item Пользовательский опыт
