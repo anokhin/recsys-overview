@@ -1,8 +1,5 @@
 \documentclass[11pt,aspectratio=169,handout]{beamer}
 
-\usetheme{Singapore}
-\usecolortheme{default}
-
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{amsmath}
@@ -16,14 +13,24 @@
 
 \usepackage{hyperref}
 
+\usepackage{fontspec}
+\setsansfont{VK Sans Display}
+
 \definecolor{info}{RGB}{62, 180, 137}
 \definecolor{warn}{RGB}{128, 0, 0}
+\definecolor{vk}{RGB}{51, 117, 246}
+
+\useinnertheme{circles}
+
+\setbeamercolor{frametitle}{fg=vk}
+\setbeamerfont{frametitle}{size=\LARGE}
+\addtobeamertemplate{frametitle}{\vspace*{0.5em}\hspace*{1em}}
+
+\newcommand{\vkitem}{\item[\color{vk}$\bullet$]}
 
 \author{Николай Анохин}
 \title{Рекомендательные системы}
 \subtitle{и кто над ними работает}
-
-\logo{\includegraphics[width=.05\textwidth]{images/vk_logo.png}\hspace{0.5em}}
 
 \begin{document}
 
@@ -47,8 +54,8 @@
 
 \begin{column}{0.58\textwidth}
 \begin{itemize}
-\item Как устроена рекомендательная система (на примере рекомендаций музыки)
-\item Что нужно знать и уметь, чтобы ее создать (это сложно, но вам точно по силам)
+\vkitem Как устроена рекомендательная система (на примере рекомендаций музыки)
+\vkitem Что нужно знать и уметь, чтобы ее создать (это сложно, но вам точно по силам)
 \end{itemize}
 \end{column}
 
@@ -76,18 +83,18 @@
 
 \begin{itemize}[<+->]
 
-\item {\bf Бизнесу}
+\vkitem {\bf Бизнесу}
 \begin{itemize}
-\item Увеличить продажи
-\item Добиться большей лояльности
-\item Улучшить пользовательский опыт
+\vkitem Увеличить продажи
+\vkitem Добиться большей лояльности
+\vkitem Улучшить пользовательский опыт
 \end{itemize}
 
-\item {\bf Пользователям}
+\vkitem {\bf Пользователям}
 \begin{itemize}
-\item Найти лучший товар
-\item Найти {\bf все} подходящие товары
-\item Залипнуть
+\vkitem Найти лучший товар
+\vkitem Найти {\bf все} подходящие товары
+\vkitem Залипнуть
 \end{itemize}
 
 \end{itemize}
@@ -259,7 +266,7 @@ $(1-c)$ -- вероятность рестарта
 
 \end{columns}
 
-\begin{tcolorbox}[colback=blue!5,colframe=blue!70,title=]
+\begin{tcolorbox}[colback=vk!5,colframe=vk!70,title=]
 Где мы окажемся через бесконечное число шагов?
 \end{tcolorbox}
 
@@ -272,7 +279,7 @@ $(1-c)$ -- вероятность рестарта
 \pause
 
 \begin{center}
-\begin{tcolorbox}[colback=info!5,colframe=info!70,title=Задача]
+\begin{tcolorbox}[colback=vk!5,colframe=vk!70,title=Задача]
 Есть $K$ пользователей. Пользователь $j$ случайным образом с равной вероятностью без возвращения выбирает $n_j$ из $N$ исполнителей. Сколько в среднем пользователей выберут каждую пару исполнителей? 
 \end{tcolorbox}
 \end{center}
@@ -389,9 +396,9 @@ $O(N_{nodes}^3)$
 
 \begin{column}{0.5\textwidth}
 \begin{itemize}[<+->]
-\item Сэмплирование монте-карло
-\item Оптимизированное прямое решение
-\item Оптимизированный power iteration
+\vkitem Сэмплирование монте-карло
+\vkitem Оптимизированное прямое решение
+\vkitem Оптимизированный power iteration
 \end{itemize}
 \end{column}
 
@@ -426,8 +433,8 @@ $O(N_{nodes}^3)$
 \end{center}
 
 \begin{itemize}[<+->]
-\item Хранение данных для анализа
-\item Потоковая обработка данных (Spark Streaming, Apache Samza)
+\vkitem Хранение данных для анализа
+\vkitem Потоковая обработка данных (Spark Streaming, Apache Samza)
 \end{itemize}
 
 \end{frame}
@@ -441,9 +448,9 @@ $O(N_{nodes}^3)$
 \pause
 
 \begin{itemize}[<+->]
-\item Распределенная файловая система: Hadoop HDFS
-\item Анализ данных: Apache Spark
-\item Контроль выполнения: Apache Airflow
+\vkitem Распределенная файловая система: Hadoop HDFS
+\vkitem Анализ данных: Apache Spark
+\vkitem Контроль выполнения: Apache Airflow
 \end{itemize}
 
 \end{frame}
@@ -482,23 +489,23 @@ $O(N_{nodes}^3)$
 
 \begin{column}{0.5\textwidth}
 \begin{itemize}[<+->]
-\item Новые алгоритмы
-\item Счастье пользователей
+\vkitem Новые алгоритмы
+\vkitem Счастье пользователей
 	\begin{itemize}
-	\item Долгосрочный эффект
-	\item Многосторонние маректплейсы
-	\item Честность рекомендаций
+	\vkitem Долгосрочный эффект
+	\vkitem Многосторонние маректплейсы
+	\vkitem Честность рекомендаций
 	\end{itemize}
 \item Выйти из пузыря
 	\begin{itemize}
-	\item Разнообразие рекомендаций
-	\item Reinforcement learning
+	\vkitem Разнообразие рекомендаций
+	\vkitem Reinforcement learning
 	\end{itemize}
 \item Пользовательский опыт
 	\begin{itemize}
-	\item Объяснения рекомендаций
-	\item Настройки рекомендаций
-	\item Оптимизация UI
+	\vkitem Объяснения рекомендаций
+	\vkitem Настройки рекомендаций
+	\vkitem Оптимизация UI
 	\end{itemize}
 \end{itemize}
 \end{column}
@@ -540,14 +547,8 @@ $O(N_{nodes}^3)$
 }
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/thankyou.png}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{images/thankyou.png}}
 \begin{frame}[plain]
-
-\vspace{18em}
-
-
-\hfill \url{https://t.me/anokhinn}
-
 \end{frame}
 }
 
